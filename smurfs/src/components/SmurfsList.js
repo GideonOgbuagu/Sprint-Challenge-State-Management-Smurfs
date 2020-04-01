@@ -1,12 +1,13 @@
 import React from 'react';
+import './SmurfsList.css'
 import Smurf from './Smurf';
 
 
+
 const SmurfsList = (props) => {
-    console.log(props, " @@@@ from SmurfList")
+    //console.log(props, " @@@@ from SmurfList")
     return (
-        <div>
-            <button className="button">Call Smurfs</button>
+        <div className="smurfs-list">
             
             {props.smurfs.map(smurf => (
                 <Smurf key={smurf.id} smurf={smurf} />

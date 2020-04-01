@@ -1,0 +1,23 @@
+/* .smurf-cont {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    border: 1px solid gray;
+
+} */
+
+.smurf {
+    width: 150px;
+    height: 200px;
+    margin: 0 auto;
+    /* border: 1px solid lightgray; */
+    border-radius: 5px;
+    background-image: linear-gradient(to top, #FFA764, #FF7C84);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    
+  }

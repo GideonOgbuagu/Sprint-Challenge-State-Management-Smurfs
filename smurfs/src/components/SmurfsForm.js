@@ -1,22 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './SmurfsForm.css';
 
-const SmurfsForm = () => {
-    const [state, setState ] = useState()
+const SmurfsForm = props => {
+    const [values, setValues] = useState({
+        name: '',
+        age: '',
+        height: ''
+    })
 
+    const handleChange = e => {
+        setValues({
+            ...values,
+            [e.target.name]: e.target.value
+        })
+    }
+    //console.log(values)
+    // useEffect(() => {
+    //     props.postSmurf()
+    // })
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        //console.log(values)
+        props.postSmurf(values);
+        //props.getSmurf();
+                
+
+
+    }
     return (
         <div className="form-container">
-            <form className="form">
-                <label>Enter Name: 
-                    <input type="type" name="name" value="" onChange placeholder="Enter name"/>
+            <form className="form" onSubmit={handleSubmit}>
+                <label><span>Name: </span>
+                    <input type="type" name="name" value={values.name} onChange={handleChange} placeholder="Enter name"/>
                 </label>
-                <label>Enter Age: 
-                    <input type="type" name="age" value="" onChange placeholder="Enter age"/>
+                <label><span>Age: </span>
+                    <input type="type" name="age" value={values.age} onChange={handleChange} placeholder="Enter age"/>
                 </label>
-                <label>Enter Height: 
-                    <input type="type" name="height" value="" onChange placeholder="Enter height"/>
+                <label><span>Height: </span>
+                    <input type="type" name="height" value={values.height} onChange={handleChange} placeholder="Enter height"/>
                 </label>
                 
+                <button className="button">Add Smurf</button>
                  
             </form>
         </div>

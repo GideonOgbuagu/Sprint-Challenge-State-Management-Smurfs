@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from 'react-redux';
-import { getSmurf } from '../actions/smurfsActions';
+import { getSmurf, postSmurf } from '../actions/smurfsActions';
 import SmurfsForm from './SmurfsForm';
 import SmurfsList from './SmurfsList';
 
@@ -9,13 +9,14 @@ import "./App.css";
 
 
 const App = (props) => {
-  const [state, setState ] = useState()
+  const [state, setState ] = useState([])
 
-  console.log(props, "@@@@@ from App.js")
+  //console.log(props, "@@@@@ from App.js")
 
   
     useEffect(() => {
      props.getSmurf()
+     //props.postSmurf()
    }, [])
  
     return (
@@ -24,7 +25,7 @@ const App = (props) => {
         <div>Welcome to your state management version of Smurfs!</div>
         {/* <div>Start inside of your `src/index.js` file!</div>
         <div>Have fun!</div> */}
-        <SmurfsForm />
+        <SmurfsForm postSmurf={props.postSmurf} getSmurf={props.getSmurf}/>
         <SmurfsList smurfs={props.smurfs} getSmurf={props.getSmurf}/>
         
         {/* <button onClick={() => props.getSmurf()}>Call Smurfs</button> */}
@@ -42,4 +43,4 @@ export const mapStateToProps = state => {
       smurfs: state.smurfs
   }
 }
-export default connect(mapStateToProps, {getSmurf})(App);
+export default connect(mapStateToProps, {getSmurf, postSmurf})(App);
