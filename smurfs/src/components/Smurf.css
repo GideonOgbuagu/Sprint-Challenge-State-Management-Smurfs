@@ -8,16 +8,32 @@
 } */
 
 .smurf {
-    width: 150px;
-    height: 200px;
-    margin: 0 auto;
+    width: 17.5%;
+    height: 250px;
+    /* margin: 0 auto; */
     /* border: 1px solid lightgray; */
+    margin: 7px;
     border-radius: 5px;
     background-image: linear-gradient(to top, #FFA764, #FF7C84);
+    /* background-image: linear-gradient(to bottom, #1B7840, #F06381); */
+    /* background-color: #FF7C84; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
+    transition: all 300ms;
     
+    
+  }
+
+  .smurf:hover {
+      /* width: 170px;
+      height: 220px; */
+      transform: scale(1.2)
+  }
+
+  .smurf p {
+      color: rgb(104, 63, 76);
+      font-weight: bold;
   }

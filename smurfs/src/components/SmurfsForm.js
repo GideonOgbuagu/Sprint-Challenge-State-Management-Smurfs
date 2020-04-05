@@ -14,16 +14,17 @@ const SmurfsForm = props => {
             [e.target.name]: e.target.value
         })
     }
-    //console.log(values)
-    // useEffect(() => {
-    //     props.postSmurf()
-    // })
+  
 
     const handleSubmit = e => {
         e.preventDefault();
         //console.log(values)
         props.postSmurf(values);
-        //props.getSmurf();
+        setValues({
+            name: '',
+            age: '',
+            height: ''
+        })
                 
 
 
@@ -31,13 +32,13 @@ const SmurfsForm = props => {
     return (
         <div className="form-container">
             <form className="form" onSubmit={handleSubmit}>
-                <label><span>Name: </span>
+                <label><span>Name </span>
                     <input type="type" name="name" value={values.name} onChange={handleChange} placeholder="Enter name"/>
                 </label>
-                <label><span>Age: </span>
+                <label><span>Age </span>
                     <input type="type" name="age" value={values.age} onChange={handleChange} placeholder="Enter age"/>
                 </label>
-                <label><span>Height: </span>
+                <label><span>Height </span>
                     <input type="type" name="height" value={values.height} onChange={handleChange} placeholder="Enter height"/>
                 </label>
                 

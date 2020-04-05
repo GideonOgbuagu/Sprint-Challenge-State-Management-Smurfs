@@ -11,12 +11,9 @@ import "./App.css";
 const App = (props) => {
   const [state, setState ] = useState([])
 
-  //console.log(props, "@@@@@ from App.js")
-
   
     useEffect(() => {
      props.getSmurf()
-     //props.postSmurf()
    }, [])
  
     return (
@@ -25,14 +22,9 @@ const App = (props) => {
         <div>Welcome to your state management version of Smurfs!</div>
         {/* <div>Start inside of your `src/index.js` file!</div>
         <div>Have fun!</div> */}
-        <SmurfsForm postSmurf={props.postSmurf} getSmurf={props.getSmurf}/>
+        <SmurfsForm postSmurf={props.postSmurf} />
         <SmurfsList smurfs={props.smurfs} getSmurf={props.getSmurf}/>
         
-        {/* <button onClick={() => props.getSmurf()}>Call Smurfs</button> */}
-      
-      {/* {props.smurfs.map((item, i) => (
-        <h1 key={i}>{item.name}</h1>
-      ))} */}
 
       </div>
     );
